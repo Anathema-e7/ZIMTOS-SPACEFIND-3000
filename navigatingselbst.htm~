@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OSZ IMT Stundenpl&auml;ne der Klassen</title>
+		<meta http-equiv='content-type' content='text/html; charset=iso-8859-1' />
+		<meta name='robots' content='noindex,nofollow' />
+		<meta http-equiv='reply-to' content='webmaster@oszimt.de' />
+		<link rel='stylesheet' type='text/css' href='http://oszimt.de/css/stupla_neu.css' />
+		<link rel='stylesheet' type='text/css' href='http://oszimt.de/css/style.css' />
+		<link rel='stylesheet' type='text/css' href='http://oszimt.de/css/oszimt.css' />
+		<link rel='stylesheet' type='text/css' href='http://oszimt.de/css/errorhandler.css' />
+		<link rel='stylesheet' type='text/css' href='http://oszimt.de/css/stupla_normalversion.css' />
+		<link rel='stylesheet' type='text/css' href='http://oszimt.de/css/oszframe.css' />
+	</head>
+	<body >
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<table class = 'oszRahmen_bg' height = '100%' width = '100%' cellpadding = '0' cellspacing = '0' border = '0'>
+			<tr height = '1%'>
+				<td colspan = '2'><a href = 'http://www.oszimt.de/'><img style = 'float:left; margin:5px 15px 11px 5px;' src = 'http://oszimt.de/img/logo/oszLogo.png' alt = 'OSZ IMT (Logo)' border = '0'></a><div style = 'margin:8px 0px 10px 0px'><b>Oberstufenzentrum<br>Informations- und Medizintechnik</b></div></td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td  class = 'oszInhalt_bg' colspan = '3' style = 'vertical-align:top;'>
+
+<!--*****************************************************************************-->
+<!--***********************Inhalt************************************************-->
+<!--*****************************************************************************-->
+
+
+
+<table  class = 'plan'>
+	<tr height = '1%'>
+		<td>&nbsp;</td>
+		<td align = 'center' valign = 'bottom' colspan = '6' nowrap><br><span class = 'ueberschrift'>Stundenplan der Klasse <b>OG 3</b></span>&nbsp;&nbsp;&nbsp;<span class = "smallmessage_gr">(Turnus:&nbsp;a&nbsp;/&nbsp;b&nbsp;/&nbsp;jede Woche)</span><br><br><span class = 'p_small'><span class = 'smallmessage_gr'><b>G&uuml;ltig ab: 23.11.2015</b></span></span></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td align = 'center'><a class = 'linkMitOhneVertretung' href = 'KPlan1.php?Klasse=OG+3&Turnus[]=a&Turnus[]=b&Turnus[]=jede Woche&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31&Fach[]=MA31&Fach[]=MI31&Fach[]=ch31&Fach[]=de31&Fach[]=en31&Fach[]=ge31&Fach[]=ku31&Fach[]=ma31&Fach[]=ph31&Fach[]=ph32&Fach[]=pw31&Fach[]=sn31&Fach[]=sp11&Fach[]=sp12&Fach[]=sp13&Fach[]=sp31&Fach[]=sp32&Fach[]=wa&Fach[]=ww31&Version=1447930237&ZeigeVertretung=0'>&Auml;nderungen<br>ausblenden</a></td>
+		<td class = 'plan_kopf'><span class = 'tab_beschr'>Montag</span></td>
+		<td class = 'plan_kopf'><span class = 'tab_beschr'>Dienstag</span></td>
+		<td class = 'plan_kopf'><span class = 'tab_beschr'>Mittwoch</span></td>
+		<td class = 'plan_kopf'><span class = 'tab_beschr'>Donnerstag</span></td>
+		<td class = 'plan_kopf'><span class = 'tab_beschr'>Freitag</span></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td class = 'plan_zeit'><span class = 'tab_beschr'>&nbsp;1. Block&nbsp;</span><br><span class = 'smallmessage_kl'>8:00-9:30</span></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ph32</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">1.315</td></tr><tr><td class = "kplan_lehrer">Hr. Sowa</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sn31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">2.306</td></tr><tr><td class = "kplan_lehrer">Fr. Meschko</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ph31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">1.314</td></tr><tr><td class = "kplan_lehrer">Hr. Herm</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>en31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">5.301</td></tr><tr><td class = "kplan_lehrer">Fr. Werner</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ww31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">4.303</td></tr><tr><td class = "kplan_lehrer">Fr. Isenthal-H.</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>EN31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">5.202</td></tr><tr><td class = "kplan_lehrer">Hr. Giesa</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sn31</b></td></tr><tr><td class = "kplan_raum">5.311</td></tr><tr><td class = "kplan_lehrer">Fr. Meschko</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ph32</b></td></tr><tr><td class = "kplan_raum">1.315</td></tr><tr><td class = "kplan_lehrer">Hr. Sowa</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ph31</b></td></tr><tr><td class = "kplan_raum">1.314</td></tr><tr><td class = "kplan_lehrer">Hr. Herm</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ku31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">2.305</td></tr><tr><td class = "kplan_lehrer">Fr. Buntebart</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ch31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">1.313</td></tr><tr><td class = "kplan_lehrer">Hr. Mastrandrea</td></tr></table></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td class = 'plan_zeit'><span class = 'tab_beschr'>&nbsp;2. Block&nbsp;</span><br><span class = 'smallmessage_kl'>9:45-11:15</span></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sn31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">5.311</td></tr><tr><td class = "kplan_lehrer">Fr. Meschko</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>pw31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">5.103</td></tr><tr><td class = "kplan_lehrer">Fr. Gerber</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_vertretung"><tr><td class = 'kplan_vertretung_info kplan_vertretung_color'>23.11.15</td></tr><tr><td class = "kplan_fach kplan_vertretung_color"><b>pw31</b></td></tr><tr><td class = "kplan_raum kplan_vertretung_color">5.202</td></tr><tr><td class = "kplan_lehrer kplan_vertretung_color">Fr. Gerber</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_vertretung"><tr><td class = 'kplan_vertretung_info kplan_vertretung_color'>24.11.15</td></tr><tr><td class = "kplan_fach kplan_vertretung_color"><b>ge31</b></td></tr><tr><td class = "kplan_raum">5.111</td></tr><tr><td class = "kplan_raum kplan_vertretung_color">4.303</td></tr><tr><td class = "kplan_lehrer kplan_vertretung_color">Fr. Gerber</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ww31</b></td></tr><tr><td class = "kplan_raum">4.301</td></tr><tr><td class = "kplan_lehrer">Fr. Isenthal-H.</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ku31</b></td></tr><tr><td class = "kplan_raum">2.305</td></tr><tr><td class = "kplan_lehrer">Fr. Buntebart</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>de31</b></td></tr><tr><td class = "kplan_raum">5.201</td></tr><tr><td class = "kplan_lehrer">Fr. Schmidt</td></tr></table></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td class = 'plan_zeit'><span class = 'tab_beschr'>&nbsp;3. Block&nbsp;</span><br><span class = 'smallmessage_kl'>11:35-13:05</span></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>MA31</b></td></tr><tr><td class = "kplan_raum">5.202</td></tr><tr><td class = "kplan_lehrer">Fr. Löchel</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>DE31</b></td></tr><tr><td class = "kplan_raum">5.204</td></tr><tr><td class = "kplan_lehrer">Fr. Grube-Rost</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_ausfall"><tr><td class = 'kplan_vertretung_info kplan_vertretung_color'>23.11.15</td></tr><tr><td class = 'kplan_vertretung_info kplan_vertretung_color'>[entfällt]</td></tr><tr><td class = "kplan_fach"><b>EN31</b></td></tr><tr><td class = "kplan_raum">5.111</td></tr><tr><td class = "kplan_lehrer">Hr. Giesa</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>MI31</b></td></tr><tr><td class = "kplan_raum">2.430</td></tr><tr><td class = "kplan_lehrer">Hr. Francioni</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>IT31</b></td></tr><tr><td class = "kplan_raum">2.304</td></tr><tr><td class = "kplan_lehrer">Hr. Tenbusch</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>en31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">5.301</td></tr><tr><td class = "kplan_lehrer">Fr. Werner</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>de31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">5.201</td></tr><tr><td class = "kplan_lehrer">Fr. Schmidt</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_vertretung"><tr><td class = 'kplan_vertretung_info kplan_vertretung_color'>25.11.15</td></tr><tr><td class = "kplan_fach"><b>EN31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum kplan_vertretung_color">5.310</td></tr><tr><td class = "kplan_lehrer">Hr. Giesa</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>MI31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">2.204</td></tr><tr><td class = "kplan_lehrer">Hr. Francioni</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>IT31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">2.429</td></tr><tr><td class = "kplan_lehrer">Hr. Tenbusch</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ge31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">5.301</td></tr><tr><td class = "kplan_lehrer">Fr. Gerber</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>en31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">5.301</td></tr><tr><td class = "kplan_lehrer">Fr. Werner</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ma31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">1.301</td></tr><tr><td class = "kplan_lehrer">Fr. Rummler</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>MA31</b>&nbsp;(a)</td></tr><tr><td class = "kplan_raum">5.202</td></tr><tr><td class = "kplan_lehrer">Fr. Löchel</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>EN31</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">5.306</td></tr><tr><td class = "kplan_lehrer">Hr. Giesa</td></tr></table></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td class = 'plan_zeit'><span class = 'tab_beschr'>&nbsp;4. Block&nbsp;</span><br><span class = 'smallmessage_kl'>13:30-15:00</span></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ch31</b></td></tr><tr><td class = "kplan_raum">1.313</td></tr><tr><td class = "kplan_lehrer">Hr. Mastrandrea</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>MI31</b></td></tr><tr><td class = "kplan_raum">2.430</td></tr><tr><td class = "kplan_lehrer">Hr. Francioni</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>IT31</b></td></tr><tr><td class = "kplan_raum">2.304</td></tr><tr><td class = "kplan_lehrer">Hr. Tenbusch</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>ma31</b></td></tr><tr><td class = "kplan_raum">1.301</td></tr><tr><td class = "kplan_lehrer">Fr. Rummler</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>MA31</b></td></tr><tr><td class = "kplan_raum">5.202</td></tr><tr><td class = "kplan_lehrer">Fr. Löchel</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_vertretung"><tr><td class = 'kplan_vertretung_info kplan_vertretung_color'>26.11.15</td></tr><tr><td class = "kplan_fach kplan_vertretung_color"><b>pw31</b></td></tr><tr><td class = "kplan_raum">5.204</td></tr><tr><td class = "kplan_raum kplan_vertretung_color">5.202</td></tr><tr><td class = "kplan_lehrer kplan_vertretung_color">Fr. Gerber</td></tr></table></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>wa</b>&nbsp;(b)</td></tr><tr><td class = "kplan_raum">4.309</td></tr><tr><td class = "kplan_lehrer">Fr. Woffleben-.</td></tr><tr><td class = "kplan_lehrer">Fr. Isenthal-H.</td></tr></table></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td class = 'plan_zeit'><span class = 'tab_beschr'>&nbsp;5. Block&nbsp;</span><br><span class = 'smallmessage_kl'>15:15-16:45</span></td>
+		<td class = 'plan_inhalt'></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sp11</b></td></tr><tr><td class = "kplan_raum">HalA</td></tr><tr><td class = "kplan_lehrer">Fr. Fritsch</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sp13</b></td></tr><tr><td class = "kplan_raum">HalB</td></tr><tr><td class = "kplan_lehrer">Hr. Schlenger</td></tr></table></td>
+		<td class = 'plan_inhalt'></td>
+		<td class = 'plan_inhalt'><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sp32</b></td></tr><tr><td class = "kplan_raum">HalA</td></tr><tr><td class = "kplan_lehrer">Fr. Stahl</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sp12</b></td></tr><tr><td class = "kplan_raum">HalC</td></tr><tr><td class = "kplan_lehrer">Fr. Schwesig</td></tr></table><table class = "kplan_inhalt kplan_inhalt_bg_normal"><tr><td class = "kplan_fach"><b>sp31</b></td></tr><tr><td class = "kplan_raum">HalB</td></tr><tr><td class = "kplan_lehrer">Fr. von Harder</td></tr></table></td>
+		<td class = 'plan_inhalt'></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr height = '1%'>
+		<td>&nbsp;</td>
+		<td colspan = '6'><div class = "divKPlanVertretungInfo  ">Hinweis: Die &Auml;nderungsangaben werden t&auml;glich aktualisiert!</div><div class = 'divVersion'>Version: 19.11.2015</div></td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+
+
+<!--*****************************************************************************-->
+<!--***********************Ende Inhalt*******************************************-->
+<!--*****************************************************************************-->
+
+
+				</td>
+				<td id = 'oszLinkleiste'>
+					<!--Linkleiste-->
+					<a class = 'navlink' href = 'http://www.oszimt.de' ><b>Home</b></a>
+					<a class = 'navlink' href = 'KPlan.php' >Klassen&uuml;bersicht</a>
+					<a class = 'navlink' href = 'smartplan.php?Klasse=OG+3&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31&Fach[]=MA31&Fach[]=MI31&Fach[]=ch31&Fach[]=de31&Fach[]=en31&Fach[]=ge31&Fach[]=ku31&Fach[]=ma31&Fach[]=ph31&Fach[]=ph32&Fach[]=pw31&Fach[]=sn31&Fach[]=sp11&Fach[]=sp12&Fach[]=sp13&Fach[]=sp31&Fach[]=sp32&Fach[]=wa&Fach[]=ww31' target = "_blank">SmartPlan</a>
+					<a class = 'navlink' href = 'http://www.oszimt.de/stundenplan/files/SmartPlanInfo.pdf' target = "_blank">Hilfe SmartPlan&nbsp;<span style = "font-size:8pt;">(pdf)</span></a>
+					<a class = 'navlink' href = 'http://www.oszimt.de/service/stundenplaene/smartplan.html' target = "_blank">Info SmartPlan</a>
+					<a class = 'navlink' href = 'http://www.oszimt.de/service/stundenplaene/stundenplan-info.html' target = "_blank">Info Stundenplan</a>
+					<a class = 'navlink' href = 'KPlan1.php?Klasse=OG+3&Turnus[]=a&Turnus[]=b&Turnus[]=jede Woche&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31&Fach[]=MA31&Fach[]=MI31&Fach[]=ch31&Fach[]=de31&Fach[]=en31&Fach[]=ge31&Fach[]=ku31&Fach[]=ma31&Fach[]=ph31&Fach[]=ph32&Fach[]=pw31&Fach[]=sn31&Fach[]=sp11&Fach[]=sp12&Fach[]=sp13&Fach[]=sp31&Fach[]=sp32&Fach[]=wa&Fach[]=ww31&Version=1447930237&Druck=1' target = "_blank">Stundenplan&nbsp;<div style = "font-size:8pt;">(Druckversion)</div></a>
+					<a class = 'navlink' href = 'http://www.oszimt.de/service/termine.html' target = '_blank'>Wochenpl&auml;ne</a>
+					<a class = 'navlink' href = 'http://www.oszimt.de/fileadmin/repository/pdf/raumplan.pdf' target = '_blank'>Raumplan&nbsp;<span style = "font-size:8pt;">(pdf)</span></a>
+					<!--Ende Linkleiste-->
+				</td>
+			</tr>
+			<tr id = 'oszFussleiste'>
+				<td colspan = '4'>&nbsp;</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+<script language="javascript" type="text/javascript" src="assets/js/new.js"></script>
+
+<script type="text/javascript">
+  <!--
+  function CheckAll(wert)
+  {
+    for (var i=0;i<document.Formular.elements.length;i++)
+    {
+      var e = document.Formular.elements[i];
+      if (e.name == "Fach[]" && wert == 1)
+        e.checked = document.Formular.cbxAlleFaecher.checked;
+      if (e.name == "Turnus[]" && wert == 2)
+        e.checked = document.Formular.cbxAlleTurnusse.checked;
+    }
+  }
+  //-->
+</script>

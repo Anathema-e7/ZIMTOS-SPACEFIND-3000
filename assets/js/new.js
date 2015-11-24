@@ -1,25 +1,25 @@
 $( document ).ready(function() {
-    // your code here
-
-/*
-var json = [];
-$('#Report').find('tbody tr').each(function(){
-    var obj = {},
-        $td = $(this).find('td'),
-        key = $td.eq(0).text(),
-        val = parseInt( $td.eq(2).text(), 10 );
-    obj[key] = val;
-    json.push(obj);
-});
-*/
 
 
-  //  var x = $("span").map(function() {
+    //nav to site
+    //window.location.replace('http://www.oszimt.de/stundenplan/KPlan1.php?Klasse=OG+3');
+    //are there checkboxes here?
+    //if yes check all and click button, then collect data
+    //if no collect data
 
-  //      return $(this).text();
+    $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://www.oszimt.de/stundenplan/KPlan1.php?Klasse=OG+3') + '&callback=?', function(data){
+	alert(data.contents);
+    });
+    
+    // check boxes
+    $(':checkbox').prop('checked', true);
 
-  //  }).toArray().join(",");
+    //click button
+    $( ":submit" ).click(function() {
+	alert( "Handler for .click() called." );
+    });
 
+//data collection
 var json = [];
 $( "table.plan td.plan_inhalt > table" ).map(function(index) {
 	    var obj = {},
@@ -34,10 +34,16 @@ $( "table.plan td.plan_inhalt > table" ).map(function(index) {
 		obj["Lehrer"] = $td.eq(2).text();
 	} else if (info.hasClass("kplan_inhalt_bg_vertretung")) {
 		obj["Fach"] = $td.eq(1).text();
-		obj["Raum"] = $td.eq(2).text();
+	    obj["Raum"] = $td.eq(2).text();
 		obj["Lehrer"] = $td.eq(3).text();
 		obj["Vertetung"] = true;
 	} else if (info.hasClass("kplan_inhalt_bg_ausfall")) {
+	    //LEHRER NISCHT GEFUNDEN....
+	    // naja trotzdem adden...
+	    	obj["Fach"] = $td.eq(1).text();
+		obj["Raum"] = $td.eq(2).text();
+		obj["Lehrer"] = $td.eq(3).text();
+		obj["Vertetung"] = true;
 	}
     json.push(obj);
 	
@@ -57,3 +63,7 @@ console.log(json);
 //console.debug(x);
 
 });
+
+
+
+//now.... push to db?
