@@ -1,25 +1,34 @@
-$( document ).ready(function() {
+//$( document ).ready(function() {
 
-jQuery.ajaxPrefilter(function(options) {
-    if (options.crossDomain && jQuery.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-    }
-});
 
-    var x = new XMLHttpRequest();
-    x.open(options.method, cors_api_url + options.url);
-    x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    x.send(options.data);
+var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+var options = {};
+options["method"]="POST";
+options["url"]='http://www.oszimt.de/stundenplan/KPlan1.php';
+options["data"]='Klasse=OG+3&Version=1447930237&Turnus[]=jede+Woche&Fach[]=ma31';
 
-	x.onload = x.onerror = function() {
-      printResult(
+
+//this isnt even needed is it?
+//$.ajaxPrefilter(function(options) {
+//    if (options.crossDomain && jQuery.support.cors) {
+//        options.url =  cors_api_url + options.url;
+//    }
+//});
+
+var x = new XMLHttpRequest();
+x.open(options.method, cors_api_url + options.url);
+x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+x.send(options.data);
+
+x.onload = x.onerror = function() {
+    alert(
         (x.responseText || '')
-      );
+    )};
 
 
 //data collection
 var json = [];
-$( "table.plan td.plan_inhalt > table" ).map(function(index) {
+$(x.responseText).find( "table.plan td.plan_inhalt > table" ).map(function() {
 	    var obj = {},
 			$td = $(this).find('td');
 			$tr = $(this).find('tr');
@@ -48,4 +57,4 @@ $( "table.plan td.plan_inhalt > table" ).map(function(index) {
  });
     console.log(json);
 	
-});
+//});
