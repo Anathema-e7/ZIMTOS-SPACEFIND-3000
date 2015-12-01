@@ -1,0 +1,21 @@
+.panel{
+margin: 5px;
+}
+
+.panel-default > .panel-heading , .panel-default{
+  color: #333;
+  background-color: #C9DAFF;
+  border-color: #8495BA;
+}
+
+.panel-info .panel-heading , .panel-info {
+  color: #333;
+  background-color: #F5F6CE;
+  border-color: #BEBF97;
+}
+
+.panel-warning .panel-heading, .panel-warning {
+  color: #333;
+  background-color: #FFCCCC;
+  border-color: #BC8989;
+}
