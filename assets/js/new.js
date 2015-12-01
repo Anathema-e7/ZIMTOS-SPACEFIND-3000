@@ -1,19 +1,19 @@
 $( document ).ready(function() {
 
-
-//do navigation with phantomjs
-
 //data collection
 var json = [];
 $( "table.plan td.plan_inhalt > table" ).map(function(index) {
 	    var obj = {},
 			$td = $(this).find('td');
+			$tr = $(this).find('tr');
 			info = $td.parent().parent().parent();
 	if (info.hasClass("kplan_inhalt_bg_normal")) {		
 		obj["Fach"] = $td.eq(0).text();
 		//TODO add wochenlogik
 		obj["Raum"] = $td.eq(1).text();
 		obj["Lehrer"] = $td.eq(2).text();
+		obj["_Block"] = $tr.parent().parent().parent().parent().index() - 1;
+		obj["_Wochentag"] = $td.parent().parent().parent().parent().index() - 1;
 	} else if (info.hasClass("kplan_inhalt_bg_vertretung")) {
 		obj["Fach"] = $td.eq(1).text();
 	    obj["Raum"] = $td.eq(2).text();
@@ -30,6 +30,9 @@ $( "table.plan td.plan_inhalt > table" ).map(function(index) {
     json.push(obj);
  });
     console.log(json);
+	
+});
+
 /*
     x = $.post('http://whateverorigin.org/get?url=' + encodeURIComponent('http://www.oszimt.de/stundenplan/KPlan.php'), {Klaasse: "OG 3"})
         .done(function(data) {
@@ -43,12 +46,12 @@ $( "table.plan td.plan_inhalt > table" ).map(function(index) {
     console.log(x);
    */ 
 
-
+/*
 x = $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://google.com') + '&callback=?', function(data){
 	alert(data.contents);
 });
 
-    
+    /*
 var xhr = $.ajax({
     type:     "post",
     data:     {Klasse: "OG 3"},
@@ -80,6 +83,6 @@ var xhr = $.ajax({
 
 });
 
-
+*/
 
 //now.... push to db?
