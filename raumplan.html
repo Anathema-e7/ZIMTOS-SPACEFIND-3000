@@ -9,9 +9,11 @@
 	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="zimtos-style.css">
+	<script type="text/javascript" src="raumplan_libs.js"></script>
+    	<script type="text/javascript" src="raumplan_script.js"></script>
 </head>	
 
-<body>
+<body style='margin:0px' onload='main()'>
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -31,7 +33,9 @@
 				</ul>
 			</div>
 		</div>
-	</nav>	
+	</nav>
+	
+	<canvas id='your_canvas' style='position: absolute; background-color: grey;'></canvas>       //the real where we draw/render our scene
 	
 	<!-- Bootstrap core JavaScript -->
 	<!-- Placed at the end of the document so the pages load faster -->
