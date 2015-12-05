@@ -1,5 +1,6 @@
-$.getScript('assets/js/lawnchair.js', function()
-	    {
+$(
+// $.getScript('assets/js/lawnchair.js', function()
+	    // {
 		    
 
 		    var bloecke = [];
@@ -47,6 +48,8 @@ $.getScript('assets/js/lawnchair.js', function()
 		var store = Lawnchair({});
 		store.batch(bloecke, function(block) {
 		    console.log(store)})
-		});
+		// });
+
 		 
 	    // });
+);
