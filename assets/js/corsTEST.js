@@ -1,4 +1,4 @@
-var json = [];
+var bloecke = [];
 
 jqhxr = $.ajax({
     type:     "POST",
@@ -12,14 +12,17 @@ data: "Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31
 	    var obj = {},
 		td = $(this).find('td'),
 		tr = $(this).find('tr'),
+		block = tr.parent().parent().parent().parent().index() - 1;
+		wochentag = td.parent().parent().parent().parent().index() - 1;
 		info = td.parent().parent().parent();
 	    if (info.hasClass("kplan_inhalt_bg_normal")) {		
 		obj["Fach"] = td.eq(0).text();
 		//TODO add wochenlogik // yea maybe not. fu webuntis
 		obj["Raum"]       = td.eq(1).text();
+		obj["ID"]       = wochentag +""+ block;
 		obj["Lehrer"]     = td.eq(2).text();
-		obj["_Block"]     = tr.parent().parent().parent().parent().index() - 1;
-		obj["_Wochentag"] = td.parent().parent().parent().parent().index() - 1;
+		// obj["_Block"]     = tr.parent().parent().parent().parent().index() - 1;
+		// obj["_Wochentag"] = td.parent().parent().parent().parent().index() - 1;
 	    }
 	    else if (info.hasClass("kplan_inhalt_bg_vertretung")) {
 		//this could need fixing
@@ -35,8 +38,10 @@ data: "Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31
 		obj["Lehrer"]    = td.eq(3).text();
 		obj["Vertetung"] = true;
 	    }
-	    json.push(obj);
+	    bloecke.push(obj);
 	})   
     }});
-console.log(json);
+console.log(bloecke);
+
+
     
