@@ -3,7 +3,9 @@ var json = [];
 jqhxr = $.ajax({
     type:     "POST",
     url:      'https://cors-anywhere.herokuapp.com/http://www.oszimt.de/stundenplan/KPlan1.php',
-    data:     'Klasse=OG+3&Version=1447930237&Turnus[]=jede+Woche&Fach[]=ma31',
+    // data:     'Klasse=OG+3&Version=1447930237&Turnus[]=jede+Woche&Fach[]=ma31',
+data: "Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31&Fach[]=MA31&Fach[]=MI31&Fach[]=ch31&Fach[]=de31&Fach[]=en31&Fach[]=ge31&Fach[]=ku31&Fach[]=ma31&Fach[]=ph31&Fach[]=ph32&Fach[]=pw31&Fach[]=sn31&Fach[]=sp11&Fach[]=sp12&Fach[]=sp13&Fach[]=sp31&Fach[]=sp32&Fach[]=wa&Fach[]=ww31&cbxAlleFaecher=1&Klasse=OG+3&Version=1449069041",
+// data: "cbxAlleTurnusse=1&cbxAlleFaecher=1&Klasse=OG+3&Version=1449069041",
     dataType: "html",
     success: function(data) {
 	$(data).find( "table.plan td.plan_inhalt > table" ).map(function() {
