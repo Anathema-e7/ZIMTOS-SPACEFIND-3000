@@ -51,6 +51,13 @@ data: "Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31
 	
     console.log(JSON.stringify(bloecke[0]));
     console.log((bloecke[0]));
+    var ul = $('<ul>').appendTo('body');
+  $.each(bloecke[0], function( key, value ) {
+	// alert( index + ": " + value );
+        ul.append($(document.createElement('li')).text(value));
+	
+    });  
+
     }});
 // console.log(bloecke.sort());
     console.log(bloecke);
