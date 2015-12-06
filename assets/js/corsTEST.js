@@ -1,5 +1,5 @@
-$( document ).ready(function() {
     var bloecke = [];
+$( document ).ready(function() {
 ids = [];
 jqhxr = $.ajax({
     type:     "POST",
@@ -8,7 +8,7 @@ jqhxr = $.ajax({
 data: "Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31&Fach[]=MA31&Fach[]=MI31&Fach[]=ch31&Fach[]=de31&Fach[]=en31&Fach[]=ge31&Fach[]=ku31&Fach[]=ma31&Fach[]=ph31&Fach[]=ph32&Fach[]=pw31&Fach[]=sn31&Fach[]=sp11&Fach[]=sp12&Fach[]=sp13&Fach[]=sp31&Fach[]=sp32&Fach[]=wa&Fach[]=ww31&cbxAlleFaecher=1&Klasse=OG+3&Version=1449069041",
 // data: "cbxAlleTurnusse=1&cbxAlleFaecher=1&Klasse=OG+3&Version=1449069041",
     dataType: "html",
-    async: false,
+    // async: false,
     success: function(data) {
 	$(data).find( "table.plan td.plan_inhalt > table" ).map(function() {
 	    var obj = {},
@@ -47,7 +47,10 @@ data: "Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31
 		obj["Vertetung"] = true;
 	    }
 	    bloecke.push(obj);
-	})   
+	});
+	
+    console.log(JSON.stringify(bloecke[0]));
+    console.log((bloecke[0]));
     }});
 // console.log(bloecke.sort());
     console.log(bloecke);
@@ -79,10 +82,11 @@ data: "Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31
 //     $(json.items).each(function(index, item) {
 //         ul.append($(document.createElement('li')).text(item));
 //     });
-    console.log(bloecke[3]);
     $.each($(bloecke[0]), function( key, value ) {
 	// alert( index + ": " + value );
         ul.append($(document.createElement('li')).text(value));
 	
     });  
 });
+
+    console.log(bloecke[3]);
