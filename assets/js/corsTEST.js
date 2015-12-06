@@ -1,4 +1,5 @@
 var bloecke = [];
+store = localStorage;
 $( document ).ready(function() {
 
     unixdate = "1449069041"
@@ -54,6 +55,7 @@ $( document ).ready(function() {
 		    obj["Ausfall"] = true;
 		}
 		arr.push(obj);
+		store.setItem(obj.id+obj.Lehrer,JSON.stringify(obj));
 	    });
 	    
 	    function findLehrerBlock(idv, lehrer) {
@@ -98,6 +100,7 @@ $( document ).ready(function() {
 	    console.log("AH");
 	    console.log(findLehrerBlock("11","Hr. Sowa"));
 	    console.log(findLehrer("Hr. Sowa"));
+    console.log(store.getItem("42Fr. Buntebart"));
 	    // console.log((bloecke[0]));
 	    // var ul = $('<ul>').appendTo('body');
 	    // var lookup = [];
@@ -111,7 +114,10 @@ $( document ).ready(function() {
 	    // });  
 
 
-	}})});
+	}
+    })
+    // console.log(store.getItem("11Hr. Sowa"));
+});
 		    // console.log(bloecke.sort());
 		    // console.log(bloecke);
 		    // console.log(bloecke[10]);
