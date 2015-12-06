@@ -1,10 +1,16 @@
 var bloecke = [];
 $( document ).ready(function() {
-    ids = [];
-    jqhxr = $.ajax({
+
+    unixdate = "1449069041"
+    og3data = "Turnus[]=a&Turnus[]=b&Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31&Fach[]=MA31&Fach[]=MI31&Fach[]=ch31&Fach[]=de31&Fach[]=en31&Fach[]=ge31&Fach[]=ku31&Fach[]=ma31&Fach[]=ph31&Fach[]=ph32&Fach[]=pw31&Fach[]=sn31&Fach[]=sp11&Fach[]=sp12&Fach[]=sp13&Fach[]=sp31&Fach[]=sp32&Fach[]=wa&Fach[]=ww31&cbxAlleFaecher=1&Klasse=OG+3&Version="
+
+    
+    // ids = [];
+    arr=[];
+    $.ajax({
 	type:     "POST",
 	url:      'https://cors-anywhere.herokuapp.com/http://www.oszimt.de/stundenplan/KPlan1.php',
-	data: "Turnus[]=a&Turnus[]=b&Turnus[]=jede+Woche&cbxAlleTurnusse=1&Fach[]=DE31&Fach[]=EN31&Fach[]=IT31&Fach[]=MA31&Fach[]=MI31&Fach[]=ch31&Fach[]=de31&Fach[]=en31&Fach[]=ge31&Fach[]=ku31&Fach[]=ma31&Fach[]=ph31&Fach[]=ph32&Fach[]=pw31&Fach[]=sn31&Fach[]=sp11&Fach[]=sp12&Fach[]=sp13&Fach[]=sp31&Fach[]=sp32&Fach[]=wa&Fach[]=ww31&cbxAlleFaecher=1&Klasse=OG+3&Version=1449069041",
+	data: og3data+unixdate,
 	dataType: "html",
 	// async: false,
 	success: function(data) {
@@ -23,7 +29,7 @@ $( document ).ready(function() {
 		    //TODO add wochenlogik // yea maybe not. fu webuntis
 		    obj["Raum"]       = td.eq(1).text();
 		    obj["id"]       = wochentag +""+ block;
-		    ids.push(wochentag +""+ block);
+		    // ids.push(wochentag +""+ block);
 		    obj["Lehrer"]     = td.eq(2).text();
 		    obj["_Block"]     = tr.parent().parent().parent().parent().index() - 1;
 		    // obj["_Block"]     = $(this).closest("td.plan_inhalt").index();
@@ -34,7 +40,7 @@ $( document ).ready(function() {
 		    obj["Fach"]      = td.eq(1).text();
 		    obj["Raum"]      = td.eq(2).text();
 		    obj["Lehrer"]    = td.eq(3).text();
-		    ids.push(wochentag +""+ block);
+		    // ids.push(wochentag +""+ block);
 		    obj["id"]       = wochentag +""+ block;
 		    obj["Vertetung"] = true;
 		} else if (info.hasClass("kplan_inhalt_bg_ausfall")) {
@@ -42,76 +48,103 @@ $( document ).ready(function() {
 		    // naja trotzdem adden...
 		    obj["Fach"]      = td.eq(1).text();
 		    obj["Raum"]      = td.eq(2).text();
-		    ids.push(wochentag +""+ block);
+		    // ids.push(wochentag +""+ block);
 		    obj["id"]       = wochentag +""+ block;
 		    obj["Lehrer"]    = td.eq(3).text();
 		    obj["Ausfall"] = true;
 		}
-		bloecke.push(obj);
+		arr.push(obj);
 	    });
 	    
-	    console.log(JSON.stringify(bloecke[0]));
-	    console.log((bloecke[0]));
-	    var ul = $('<ul>').appendTo('body');
-	    // var lookup = [];
-	    // for (var i = 0, len = bloecke.length; i < len; i++) {
-	    //     lookup[bloecke[i].id] = bloecke[i];
-	    // };
-	    function fill(idv) {
-		var result = $.grep(bloecke, function(e){ return e.id == idv; });
+	    function findLehrerBlock(idv, lehrer) {
+		var result = $.grep(arr, function(e){ return (e.id == idv) && (e.Lehrer == lehrer); });
 		if (result.length == 0) {
 		    // not found
+		    alert("no info!");
 		} else if (result.length == 1) {
-		    $.each(result[0], function( key, value ) {
-			ul.append($(document.createElement('li')).text(value));
-		    });  
+		    console.log("one");
+		    return result[0];
+		    // $.each(result[0], function( key, value ) {
+		    // ul.append($(document.createElement('li')).text(value));
+		    // });  
 		} else {
+		    console.log("multi");
+		    return result;
 		    // multiple items found
 		}
 	    };
 
-	    fill(14);
+	    function findLehrer(lehrer) {
+		var result = $.grep(arr, function(e){ return (e.Lehrer == lehrer); });
+		if (result.length == 0) {
+		    // not found
+		    alert("no info!");
+		} else if (result.length == 1) {
+		    console.log("one");
+		    return result[0];
+		    // $.each(result[0], function( key, value ) {
+		    // ul.append($(document.createElement('li')).text(value));
+		    // });  
+		} else {
+		    console.log("multi");
+		    return result;
+		    // multiple items found
+		}
+	    };
+ 
+	    // console.log(JSON.stringify(bloecke[0]));
+	    // bloecke = getData(og3data);
+	    console.log(arr);
+	    console.log("AH");
+	    console.log(findLehrerBlock("11","Hr. Sowa"));
+	    console.log(findLehrer("Hr. Sowa"));
+	    // console.log((bloecke[0]));
+	    // var ul = $('<ul>').appendTo('body');
+	    // var lookup = [];
+	    // for (var i = 0, len = bloecke.length; i < len; i++) {
+	    //     lookup[bloecke[i].id] = bloecke[i];
+	    // };
+
+	    // fill(14);
 	    // $.each(lookup[11], function( key, value ) {
 	    //     ul.append($(document.createElement('li')).text(value));
 	    // });  
 
 
-	}});
-    // console.log(bloecke.sort());
-    console.log(bloecke);
-    // console.log(bloecke[10]);
-    console.log(ids);
-    // var result = $.grep(bloecke, function(e){ return e.id == "11"; });
-    // console.log(result);
-    console.log(JSON.stringify(bloecke[0]));
-    // var lookup = {};
-    // for (var i = 0, len = bloecke.length; i < len; i++) {
-    // lookup[bloecke[i].id] = bloecke[i];
-    // }
+	}})});
+		    // console.log(bloecke.sort());
+		    // console.log(bloecke);
+		    // console.log(bloecke[10]);
+		    // console.log(ids);
+		    // var result = $.grep(bloecke, function(e){ return e.id == "11"; });
+		    // console.log(result);
+		    // console.log(JSON.stringify(bloecke[0]));
+		    // var lookup = {};
+		    // for (var i = 0, len = bloecke.length; i < len; i++) {
+		    // lookup[bloecke[i].id] = bloecke[i];
+		    // }
 
 
-    // function sortByKey(array, key) {
-    //     return array.sort(function(a, b) {
-    //         var x = a[key]; var y = b[key];
-    //         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    //     });
-    // }
-    // b = sortByKey(bloecke,"id");
-    // console.log(b);
-    // // console.log(lookup[11]);
-    // // console.log(lookup);
+		    // function sortByKey(array, key) {
+		    //     return array.sort(function(a, b) {
+		    //         var x = a[key]; var y = b[key];
+		    //         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+		    //     });
+		    // }
+		    // b = sortByKey(bloecke,"id");
+		    // console.log(b);
+		    // // console.log(lookup[11]);
+		    // // console.log(lookup);
 
-    //     var ul = $('<ul>').appendTo('body');
-    //     var json = { items: ['item 1', 'item 2', 'item 3'] };
-    // // var json = bloecke;
-    //     $(json.items).each(function(index, item) {
-    //         ul.append($(document.createElement('li')).text(item));
-    //     });
-    $.each($(bloecke[0]), function( key, value ) {
-	// alert( index + ": " + value );
-        ul.append($(document.createElement('li')).text(value));
-	
-    });  
-});
+		    //     var ul = $('<ul>').appendTo('body');
+		    //     var json = { items: ['item 1', 'item 2', 'item 3'] };
+		    // // var json = bloecke;
+		    //     $(json.items).each(function(index, item) {
+		    //         ul.append($(document.createElement('li')).text(item));
+		    //     });
+		    // $.each($(bloecke[0]), function( key, value ) {
+		    // alert( index + ": " + value );
+		    // ul.append($(document.createElement('li')).text(value));
+		    
 
-console.log(bloecke[3]);
+// console.log(bloecke[3]);
