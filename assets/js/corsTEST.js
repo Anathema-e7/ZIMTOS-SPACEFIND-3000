@@ -1,4 +1,5 @@
 var bloecke = [];
+store = localStorage;
 $( document ).ready(function() {
 
     unixdate = "1449069041"
@@ -7,144 +8,156 @@ $( document ).ready(function() {
     
     // ids = [];
     arr=[];
-    $.ajax({
-	type:     "POST",
-	url:      'https://cors-anywhere.herokuapp.com/http://www.oszimt.de/stundenplan/KPlan1.php',
-	data: og3data+unixdate,
-	dataType: "html",
-	// async: false,
-	success: function(data) {
-	    //this will remove any images from the HTML _before_ putting it in a DOM object, so that they won't be requested. less bandwidth.
-	    data = data.replace(/<img[^>]+>/gi, "");
+    function asyncCall() { 
+	$.ajax({
+	    type:     "POST",
+	    url:      'https://cors-anywhere.herokuapp.com/http://www.oszimt.de/stundenplan/KPlan1.php',
+	    data: og3data+unixdate,
+	    dataType: "html",
+	    async: false,
+	    success: function(data) {
+		result=data;
+	    }
+	})
+	return result
+    };
 
-	    $(data).find( "table.plan td.plan_inhalt > table" ).map(function() {
-		var obj = {},
-		    td = $(this).find('td'),
-		    tr = $(this).find('tr'),
-		    block = tr.parent().parent().parent().parent().index() - 1;
-		wochentag = td.parent().parent().parent().parent().index() - 1;
-		info = td.parent().parent().parent();
-		if (info.hasClass("kplan_inhalt_bg_normal")) {		
-		    obj["Fach"] = td.eq(0).text();
-		    //TODO add wochenlogik // yea maybe not. fu webuntis
-		    obj["Raum"]       = td.eq(1).text();
-		    obj["id"]       = wochentag +""+ block;
-		    // ids.push(wochentag +""+ block);
-		    obj["Lehrer"]     = td.eq(2).text();
-		    obj["_Block"]     = tr.parent().parent().parent().parent().index() - 1;
-		    // obj["_Block"]     = $(this).closest("td.plan_inhalt").index();
-		    obj["_Wochentag"] = td.parent().parent().parent().parent().index() - 1;
-		}
-		else if (info.hasClass("kplan_inhalt_bg_vertretung")) {
-		    //this could need fixing
-		    obj["Fach"]      = td.eq(1).text();
-		    obj["Raum"]      = td.eq(2).text();
-		    obj["Lehrer"]    = td.eq(3).text();
-		    // ids.push(wochentag +""+ block);
-		    obj["id"]       = wochentag +""+ block;
-		    obj["Vertetung"] = true;
-		} else if (info.hasClass("kplan_inhalt_bg_ausfall")) {
-		    //LEHRER NISCHT GEFUNDEN....
-		    // naja trotzdem adden...
-		    obj["Fach"]      = td.eq(1).text();
-		    obj["Raum"]      = td.eq(2).text();
-		    // ids.push(wochentag +""+ block);
-		    obj["id"]       = wochentag +""+ block;
-		    obj["Lehrer"]    = td.eq(3).text();
-		    obj["Ausfall"] = true;
-		}
-		arr.push(obj);
-	    });
-	    
-	    function findLehrerBlock(idv, lehrer) {
-		var result = $.grep(arr, function(e){ return (e.id == idv) && (e.Lehrer == lehrer); });
-		if (result.length == 0) {
-		    // not found
-		    alert("no info!");
-		} else if (result.length == 1) {
-		    console.log("one");
-		    return result[0];
-		    // $.each(result[0], function( key, value ) {
-		    // ul.append($(document.createElement('li')).text(value));
-		    // });  
-		} else {
-		    console.log("multi");
-		    return result;
-		    // multiple items found
-		}
-	    };
+    //this will remove any images from the HTML _before_ putting it in a DOM object, so that they won't be requested. less bandwidth.
+    data = asyncCall();
+    data = data.replace(/<img[^>]+>/gi, "");
 
-	    function findLehrer(lehrer) {
-		var result = $.grep(arr, function(e){ return (e.Lehrer == lehrer); });
-		if (result.length == 0) {
-		    // not found
-		    alert("no info!");
-		} else if (result.length == 1) {
-		    console.log("one");
-		    return result[0];
-		    // $.each(result[0], function( key, value ) {
-		    // ul.append($(document.createElement('li')).text(value));
-		    // });  
-		} else {
-		    console.log("multi");
-		    return result;
-		    // multiple items found
-		}
-	    };
- 
-	    // console.log(JSON.stringify(bloecke[0]));
-	    // bloecke = getData(og3data);
-	    console.log(arr);
-	    console.log("AH");
-	    console.log(findLehrerBlock("11","Hr. Sowa"));
-	    console.log(findLehrer("Hr. Sowa"));
-	    // console.log((bloecke[0]));
-	    // var ul = $('<ul>').appendTo('body');
-	    // var lookup = [];
-	    // for (var i = 0, len = bloecke.length; i < len; i++) {
-	    //     lookup[bloecke[i].id] = bloecke[i];
-	    // };
-
-	    // fill(14);
-	    // $.each(lookup[11], function( key, value ) {
-	    //     ul.append($(document.createElement('li')).text(value));
+    $(data).find( "table.plan td.plan_inhalt > table" ).map(function() {
+	var obj = {},
+	    td = $(this).find('td'),
+	    tr = $(this).find('tr'),
+	    block = tr.parent().parent().parent().parent().index() - 1;
+	wochentag = td.parent().parent().parent().parent().index() - 1;
+	info = td.parent().parent().parent();
+	if (info.hasClass("kplan_inhalt_bg_normal")) {		
+	    obj["Fach"] = td.eq(0).text();
+	    //TODO add wochenlogik // yea maybe not. fu webuntis
+	    obj["Raum"]       = td.eq(1).text();
+	    obj["id"]       = wochentag +""+ block;
+	    // ids.push(wochentag +""+ block);
+	    obj["Lehrer"]     = td.eq(2).text();
+	    obj["_Block"]     = tr.parent().parent().parent().parent().index() - 1;
+	    // obj["_Block"]     = $(this).closest("td.plan_inhalt").index();
+	    obj["_Wochentag"] = td.parent().parent().parent().parent().index() - 1;
+	}
+	else if (info.hasClass("kplan_inhalt_bg_vertretung")) {
+	    //this could need fixing
+	    obj["Fach"]      = td.eq(1).text();
+	    obj["Raum"]      = td.eq(2).text();
+	    obj["Lehrer"]    = td.eq(3).text();
+	    // ids.push(wochentag +""+ block);
+	    obj["id"]       = wochentag +""+ block;
+	    obj["Vertetung"] = true;
+	} else if (info.hasClass("kplan_inhalt_bg_ausfall")) {
+	    //LEHRER NISCHT GEFUNDEN....
+	    // naja trotzdem adden...
+	    obj["Fach"]      = td.eq(1).text();
+	    obj["Raum"]      = td.eq(2).text();
+	    // ids.push(wochentag +""+ block);
+	    obj["id"]       = wochentag +""+ block;
+	    obj["Lehrer"]    = td.eq(3).text();
+	    obj["Ausfall"] = true;
+	}
+	arr.push(obj);
+	store.setItem(obj.id+obj.Lehrer,JSON.stringify(obj));
+    });
+    
+    function findLehrerBlock(idv, lehrer) {
+	var result = $.grep(arr, function(e){ return (e.id == idv) && (e.Lehrer == lehrer); });
+	if (result.length == 0) {
+	    // not found
+	    alert("no info!");
+	} else if (result.length == 1) {
+	    console.log("one");
+	    return result[0];
+	    // $.each(result[0], function( key, value ) {
+	    // ul.append($(document.createElement('li')).text(value));
 	    // });  
+	} else {
+	    console.log("multi");
+	    return result;
+	    // multiple items found
+	}
+    };
+
+    function findLehrer(lehrer) {
+	var result = $.grep(arr, function(e){ return (e.Lehrer == lehrer); });
+	if (result.length == 0) {
+	    // not found
+	    alert("no info!");
+	} else if (result.length == 1) {
+	    console.log("one");
+	    return result[0];
+	    // $.each(result[0], function( key, value ) {
+	    // ul.append($(document.createElement('li')).text(value));
+	    // });  
+	} else {
+	    console.log("multi");
+	    return result;
+	    // multiple items found
+	}
+    };
+    
+    // console.log(JSON.stringify(bloecke[0]));
+    // bloecke = getData(og3data);
+    console.log(arr);
+    console.log("AH");
+    console.log(findLehrerBlock("11","Hr. Sowa"));
+    console.log(findLehrer("Hr. Sowa"));
+    console.log(store.getItem("42Fr. Buntebart"));
+    // console.log((bloecke[0]));
+    // var ul = $('<ul>').appendTo('body');
+    // var lookup = [];
+    // for (var i = 0, len = bloecke.length; i < len; i++) {
+    //     lookup[bloecke[i].id] = bloecke[i];
+    // };
+
+    // fill(14);
+    // $.each(lookup[11], function( key, value ) {
+    //     ul.append($(document.createElement('li')).text(value));
+    // });  
 
 
-	}})});
-		    // console.log(bloecke.sort());
-		    // console.log(bloecke);
-		    // console.log(bloecke[10]);
-		    // console.log(ids);
-		    // var result = $.grep(bloecke, function(e){ return e.id == "11"; });
-		    // console.log(result);
-		    // console.log(JSON.stringify(bloecke[0]));
-		    // var lookup = {};
-		    // for (var i = 0, len = bloecke.length; i < len; i++) {
-		    // lookup[bloecke[i].id] = bloecke[i];
-		    // }
+
+    // console.log(store.getItem("11Hr. Sowa"));
+});
+// console.log(bloecke.sort());
+// console.log(bloecke);
+// console.log(bloecke[10]);
+// console.log(ids);
+// var result = $.grep(bloecke, function(e){ return e.id == "11"; });
+// console.log(result);
+// console.log(JSON.stringify(bloecke[0]));
+// var lookup = {};
+// for (var i = 0, len = bloecke.length; i < len; i++) {
+// lookup[bloecke[i].id] = bloecke[i];
+// }
 
 
-		    // function sortByKey(array, key) {
-		    //     return array.sort(function(a, b) {
-		    //         var x = a[key]; var y = b[key];
-		    //         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-		    //     });
-		    // }
-		    // b = sortByKey(bloecke,"id");
-		    // console.log(b);
-		    // // console.log(lookup[11]);
-		    // // console.log(lookup);
+// function sortByKey(array, key) {
+//     return array.sort(function(a, b) {
+//         var x = a[key]; var y = b[key];
+//         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+//     });
+// }
+// b = sortByKey(bloecke,"id");
+// console.log(b);
+// // console.log(lookup[11]);
+// // console.log(lookup);
 
-		    //     var ul = $('<ul>').appendTo('body');
-		    //     var json = { items: ['item 1', 'item 2', 'item 3'] };
-		    // // var json = bloecke;
-		    //     $(json.items).each(function(index, item) {
-		    //         ul.append($(document.createElement('li')).text(item));
-		    //     });
-		    // $.each($(bloecke[0]), function( key, value ) {
-		    // alert( index + ": " + value );
-		    // ul.append($(document.createElement('li')).text(value));
-		    
+//     var ul = $('<ul>').appendTo('body');
+//     var json = { items: ['item 1', 'item 2', 'item 3'] };
+// // var json = bloecke;
+//     $(json.items).each(function(index, item) {
+//         ul.append($(document.createElement('li')).text(item));
+//     });
+// $.each($(bloecke[0]), function( key, value ) {
+// alert( index + ": " + value );
+// ul.append($(document.createElement('li')).text(value));
+
 
 // console.log(bloecke[3]);
