@@ -39,7 +39,7 @@ $( document ).ready(function() {
 	    obj["Raum"]       = td.eq(1).text();
 	    obj["id"]       = wochentag +""+ block;
 	    // ids.push(wochentag +""+ block);
-	    obj["Lehrer"]     = td.eq(2).text();
+	    obj["Lehrer"]     = td.eq(2).text().substr(4);
 	    obj["_Block"]     = tr.parent().parent().parent().parent().index() - 1;
 	    // obj["_Block"]     = $(this).closest("td.plan_inhalt").index();
 	    obj["_Wochentag"] = td.parent().parent().parent().parent().index() - 1;
@@ -48,7 +48,7 @@ $( document ).ready(function() {
 	    //this could need fixing
 	    obj["Fach"]      = td.eq(1).text();
 	    obj["Raum"]      = td.eq(2).text();
-	    obj["Lehrer"]    = td.eq(3).text();
+	    obj["Lehrer"]    = td.eq(3).text().substr(4);
 	    // ids.push(wochentag +""+ block);
 	    obj["id"]       = wochentag +""+ block;
 	    obj["Vertetung"] = true;
@@ -59,7 +59,7 @@ $( document ).ready(function() {
 	    obj["Raum"]      = td.eq(2).text();
 	    // ids.push(wochentag +""+ block);
 	    obj["id"]       = wochentag +""+ block;
-	    obj["Lehrer"]    = td.eq(3).text();
+	    obj["Lehrer"]    = td.eq(3).text().substr(4);
 	    obj["Ausfall"] = true;
 	}
 	arr.push(obj);
@@ -70,7 +70,7 @@ $( document ).ready(function() {
 	var result = $.grep(arr, function(e){ return (e.id == idv) && (e.Lehrer == lehrer); });
 	if (result.length == 0) {
 	    // not found
-	    alert("no info!");
+	    alert("no info!" + lehrer + e.Lehrer);
 	} else if (result.length == 1) {
 	    console.log("one");
 	    return result[0];
@@ -88,7 +88,7 @@ $( document ).ready(function() {
 	var result = $.grep(arr, function(e){ return (e.Lehrer == lehrer); });
 	if (result.length == 0) {
 	    // not found
-	    alert("no info!");
+	    alert("no info!" + lehrer + e.Lehrer);
 	} else if (result.length == 1) {
 	    console.log("one");
 	    return result[0];
@@ -106,9 +106,9 @@ $( document ).ready(function() {
     // bloecke = getData(og3data);
     console.log(arr);
     console.log("AH");
-    console.log(findLehrerBlock("11","Hr. Sowa"));
-    console.log(findLehrer("Hr. Sowa"));
-    console.log(store.getItem("42Fr. Buntebart"));
+    console.log(findLehrerBlock("11","Sowa"));
+    console.log(findLehrer("Sowa"));
+    console.log(store.getItem("42Buntebart"));
     // console.log((bloecke[0]));
     // var ul = $('<ul>').appendTo('body');
     // var lookup = [];
