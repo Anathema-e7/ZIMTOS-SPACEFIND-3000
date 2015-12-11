@@ -59,9 +59,9 @@ $( document ).ready(function() {
 	    obj.raum      = td.eq(2).text();
 	    obj.id        = wochentag +""+ block;
 	    // obj.lehrer    = td.eq(3).text().substr(4);
-	    obj.lehrer    = "WAT";
-	    // obj.lehrer    = td.find(".kplan_lehrer").text().substr(4);
-	    obj.vertetung = true;
+	    // obj.lehrer    = "WAT";
+	    obj.lehrer    = info.find(".kplan_lehrer").text().substr(4);
+	    obj.vertretung = true;
 	} else if (info.hasClass("kplan_inhalt_bg_ausfall")) {
 	    obj.fach      = td.eq(2).text().replace(/\w \((a|b)\)/,"$1");
 	    obj.raum    = td.eq(3).text();
@@ -112,20 +112,29 @@ $( document ).ready(function() {
 
 	    // console.log(idv +t[0].fach+ store.getItem(t[0].fach) + t.length);
 	    for(var i=0; i<t.length; i++) {
+		tc=t[i];
 			console.log(i + " " + store.getItem(t[i].fach));
-		if (typeof t[i] === "undefined") {
+		if (typeof tc === "undefined") {
 		} else { 
 		    // console.log("fu");
-		    if(store.getItem(t[i].fach)=="true") {
-		    // if(store.getItem(t[i].fach)==null) {
+		    if(store.getItem(tc.fach)=="true") {
+		    // if(store.getItem(tc.fach)==null) {
 			// console.log("ARSCH");
-			// console.log(t[i].fach);
+			// console.log(tc.fach);
 			// break;
-			console.log(store.getItem(t[i].fach));
-		    // console.log((store.getItem(t[i].fach)));
-		    	document.getElementById('k'+idv).innerHTML = t[i].fach;
-		    	document.getElementById('r'+idv).innerHTML = t[i].raum;
-		    	document.getElementById('l'+idv).innerHTML = t[i].lehrer;
+			console.log(store.getItem(tc.fach));
+			if(tc.ausfall==true) {
+			$("#b"+idv + " > div").attr("class","panel panel-warning");
+			}
+
+			if(tc.vertretung==true) {
+			$("#b"+idv + " > div").attr("class","panel panel-info");
+			}
+			
+		    // console.log((store.getItem(tc.fach)));
+		    	document.getElementById('k'+idv).innerHTML = tc.fach;
+		    	document.getElementById('r'+idv).innerHTML = tc.raum;
+		    	document.getElementById('l'+idv).innerHTML = tc.lehrer;
 		    }
 		}
 		// console.log(i);
