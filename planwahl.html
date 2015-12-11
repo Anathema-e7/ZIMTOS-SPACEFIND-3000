@@ -25,9 +25,12 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Stundenpläne</a></li>
+					<!-- <li class="active" id="plan" onclick="checkStorage()"><a href="#">Stundenpläne</a></li> -->
+					<li class="active" id="plan" ><a href="#">Stundenpläne</a></li>
 					<li><a href="lehrersuche.html">Lehrer finden</a></li>
 					<li><a href="raumplan.html">Raumplan</a></li>
+					<li><a href="planwahl.html">Einstellungen</a></li>
+					<li><a onclick="localStorage.clear()" href="#">clear storage</a></li>
 				</ul>
 			</div>
 		</div>
@@ -68,7 +71,9 @@
 			</div>
 			
 			<div>
-				<p><a class="btn btn-primary btn-sm" href="stundenplan.html" role="button">Anwenden</a></p>
+				<a class="btn btn-primary btn-sm" role="button" id="switchall">switch all</a>
+				<!-- <p><a class="btn btn-primary btn-sm" href="stundenplan.html" role="button" onclick="fillStorageWithCourses()">Anwenden</a></p> -->
+				<p><a class="btn btn-primary btn-sm" role="button" id="settingsbtn">Anwenden</a></p>
 				Erdrücken Sie den Knopf.
 			</div>
 			
@@ -78,8 +83,11 @@
 	<!-- Bootstrap core JavaScript -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<script src="assets/js/settings.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="assets/js/ie10-viewport-bug-workaround.js"></script>	
+
 </body>
 </html>
