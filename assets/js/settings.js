@@ -15,7 +15,7 @@ function isStorageFilled() {
 
     $("#settingsbtn").click(function() {
 	fillStorageWithCourses();
-	window.open("stundenplan.html");
+	window.open("stundenplan.html","_self");
     });
 
     $("#switchall").click(function() {
