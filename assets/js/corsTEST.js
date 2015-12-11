@@ -1,5 +1,4 @@
 var bloecke = [];
-store = localStorage;
 
     emptyObj = {
 	fach:"",
@@ -83,7 +82,7 @@ $( document ).ready(function() {
 	var result = $.grep(arr, function(e){ return (e.id == idv); });
 	if (result.length == 0) {
 	    // not found
-	    return [emptyObj];
+	    return [null];
 	    // alert("no info!" + lehrer + e.Lehrer);
 	} else if (result.length == 1) {
 	    console.log("one");
@@ -104,9 +103,13 @@ $( document ).ready(function() {
     function fillBlock(idv) {
 	t = findBlock(idv)[0];
 	// console.log(idv);
+	if (t) {
 	document.getElementById('k'+idv).innerHTML = t.fach;
 	document.getElementById('r'+idv).innerHTML = t.raum;
 	document.getElementById('l'+idv).innerHTML = t.lehrer;
+	} else {
+	    $("#b"+idv).hide();
+	}
     }
 
     function fillPlan() {
