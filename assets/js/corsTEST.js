@@ -110,6 +110,8 @@ $( document ).ready(function() {
 
 	if (t[0] !=null) {
 
+	    $("#b"+idv).hide();
+
 	    // console.log(idv +t[0].fach+ store.getItem(t[0].fach) + t.length);
 	    for(var i=0; i<t.length; i++) {
 		tc=t[i];
@@ -122,6 +124,9 @@ $( document ).ready(function() {
 			// console.log("ARSCH");
 			// console.log(tc.fach);
 			// break;
+
+
+	    $("#b"+idv).show();
 			console.log(store.getItem(tc.fach));
 			if(tc.ausfall==true) {
 			$("#b"+idv + " > div").attr("class","panel panel-warning");
