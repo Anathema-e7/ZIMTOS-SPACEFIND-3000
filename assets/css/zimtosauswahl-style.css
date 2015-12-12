@@ -1,0 +1,20 @@
+/*Setzt die Breite der Dropdownmenüs*/
+.dropdown-toggle {
+ min-width:auto;
+ width:100%;
+}
+/*Setzt die Breite der Buttons*/
+.btn {
+ min-width:auto;
+ width:100%;
+}
+/*Setzt die Breite der Eingabefelder*/
+.input-group {
+ min-width:auto;
+ width:100%;
+}
+/*Zentriert den Inhalt von <div class="centerBlock">*/
+.centerBlock {
+ display: table;
+ margin: 0 auto;
+}

@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="assets/css/zimtos-style.css">
+	<!-- Eingabeseiten CSS -->
+	<link rel="stylesheet" href="assets/css/zimtosauswahl-style.css">
 </head>	
 
 <body>
@@ -30,15 +32,13 @@
 					<li><a href="lehrersuche.html">Lehrer finden</a></li>
 					<li><a href="raumplan.html">Raumplan</a></li>
 					<li><a href="planwahl.html">Einstellungen</a></li>
-					<li><a onclick="localStorage.clear()" href="#">clear storage</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	
-	<div class="container">
-	        
-
+	<div class="centerBlock">
+	
 			<h4>Auswahl für Klasse OG3</h4>
 
 			<div class="dropdown">
@@ -71,13 +71,14 @@
 					<li><a><input type="checkbox" id="wa">wa</a></li>
 				</ul>
 			</div>
-			
-			<div>
-				<a class="btn btn-primary btn-sm" role="button" id="switchall">switch all</a>
+
+			<div class="centerBlock">
+
+				<a class="btn btn-primary btn-sm" role="button" id="switchall">Alle auswählen</a>
+				<a class="btn btn-primary btn-sm" role="button" id="switchall" onclick="localStorage.clear()">Zurücksetzen</a>
 				<!-- <p><a class="btn btn-primary btn-sm" href="stundenplan.html" role="button" onclick="fillStorageWithCourses()">Anwenden</a></p> -->
-				<p><a class="btn btn-primary btn-sm" role="button" id="settingsbtn">Anwenden</a></p>
-				Erdrücken Sie den Knopf.
-			</div>
+				<a class="btn btn-primary btn-sm" role="button" id="settingsbtn">Anwenden</a></p>
+
 			
 		
 	</div>

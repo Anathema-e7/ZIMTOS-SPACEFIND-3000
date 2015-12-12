@@ -257,8 +257,8 @@ border-top-color: transparent;
         float: left;
     }
     .navbar-nav > li > a {
-        padding-top: 0px;
-        padding-bottom: 0px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .navbar-nav.navbar-right:last-child {
         margin-right: -15px;
