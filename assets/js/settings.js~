@@ -1,8 +1,0 @@
-$( document ).ready(function() {
-    $("#plan").click(function() {
-	isStorageFilled() ? window.location.href = "stundenplan.html" : $("#planwahl").click();
-    });
-    function isStorageFilled() {
-	return localStorage.getItem("filled")=="1";
-    }
-});
