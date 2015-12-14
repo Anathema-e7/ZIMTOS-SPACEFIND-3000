@@ -10,7 +10,7 @@ $("#go").click(function(){
     s = w+b+l;
     f = JSON.parse(localStorage.getItem(s));
     if (f!=null) {
-    $("#outputLehrer").text(f.raum);
+    $("#outputLehrer").text(l + " ist im Raum "+ f.raum);
     } else { 
 	$("#outputLehrer").text("Lehrer nicht gefunden");
     }

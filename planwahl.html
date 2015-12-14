@@ -28,10 +28,10 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<!-- <li class="active" id="plan" onclick="checkStorage()"><a href="#">Stundenpläne</a></li> -->
-					<li class="active" id="plan" ><a href="#">Stundenpläne</a></li>
+					<li><a id="plan" href="#">Stundenpläne</a></li>
 					<li><a href="lehrersuche.html">Lehrer finden</a></li>
 					<li><a href="raumplan.html">Raumplan</a></li>
-					<li><a href="planwahl.html">Einstellungen</a></li>
+					<li class="active"><a href="#">Einstellungen</a></li>
 				</ul>
 			</div>
 		</div>
@@ -48,7 +48,7 @@
 				</button>
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					<li><a><input type="checkbox" id="DE31">DE31</a></li>
-					<li><a><input type="checkbox" id="ER31">EN31</a></li>
+					<li><a><input type="checkbox" id="EN31">EN31</a></li>
 					<li><a><input type="checkbox" id="IT31">IT31</a></li>
 					<li><a><input type="checkbox" id="MA31">MA31</a></li>
 					<li><a><input type="checkbox" id="MI31">MI31</a></li>
@@ -74,8 +74,8 @@
 
 			<div class="centerBlock">
 
-				<a class="btn btn-primary btn-sm" role="button" id="switchall">Alle auswählen</a>
-				<a class="btn btn-primary btn-sm" role="button" id="switchall" onclick="localStorage.clear()">Zurücksetzen</a>
+				<a class="btn btn-primary btn-sm" role="button" id="switchall">Auswahl umkehren</a>
+				<a class="btn btn-primary btn-sm" role="button" id="reset" >Zurücksetzen</a>
 				<!-- <p><a class="btn btn-primary btn-sm" href="stundenplan.html" role="button" onclick="fillStorageWithCourses()">Anwenden</a></p> -->
 				<a class="btn btn-primary btn-sm" role="button" id="settingsbtn">Anwenden</a></p>
 
@@ -87,6 +87,7 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+	<script src="assets/js/linklogic.js"></script>
 	<script src="assets/js/settings.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
