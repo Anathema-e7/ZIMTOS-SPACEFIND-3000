@@ -73,7 +73,7 @@ $( document ).ready(function() {
 	//CHANGE
 	//var curr = store.getItem(obj.id+"OG3")
 	//if (curr != null) {
-	store.setItem(obj.id+"OG3",JSON.stringify(obj));
+	store.setItem(obj.id+obj.lehrer,JSON.stringify(obj));
 	//}
 	//o1[0] = obj;
 	//o1[1] = obj;
@@ -100,7 +100,7 @@ $( document ).ready(function() {
     };
     // console.log(JSON.stringify(bloecke[0]));
     // bloecke = getData(og3data);
-    console.log(arr);
+    // console.log(arr);
     //mon1 = JSON.parse(store.getItem('11OG3'));
     function fillBlock(idv) {
 	// r = findBlock(idv)[0];
@@ -115,7 +115,7 @@ $( document ).ready(function() {
 	    // console.log(idv +t[0].fach+ store.getItem(t[0].fach) + t.length);
 	    for(var i=0; i<t.length; i++) {
 		tc=t[i];
-			console.log(i + " " + store.getItem(t[i].fach));
+			// console.log(i + " " + store.getItem(t[i].fach));
 		if (typeof tc === "undefined") {
 		} else { 
 		    // console.log("fu");
@@ -127,7 +127,7 @@ $( document ).ready(function() {
 
 
 	    $("#b"+idv).show();
-			console.log(store.getItem(tc.fach));
+			// console.log(store.getItem(tc.fach));
 			if(tc.ausfall==true) {
 			$("#b"+idv + " > div").attr("class","panel panel-warning");
 			}
@@ -178,7 +178,7 @@ $( document ).ready(function() {
     
 
     fillPlan();
-    console.log("AH");
+    // console.log("AH");
     // console.log(findLehrerBlock("11","Sowa"));
     // console.log(findLehrer("Sowa"));
     // console.log(store.getItem("42Buntebart"));
