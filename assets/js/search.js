@@ -4,8 +4,8 @@ $( document ).ready(function() {
 $("#go").click(function(){
 
     // alert($("#dropdownMenu2").text().substr(0,1));
-    w = $("#dropdownMenu2").val();
-    b = $("#dropdownMenu1").val();
+    w = $("#dropdownMenu1").val();
+    b = $("#dropdownMenu2").val();
     l = $("#lname").val();
     s = w+b+l;
     f = JSON.parse(localStorage.getItem(s));
