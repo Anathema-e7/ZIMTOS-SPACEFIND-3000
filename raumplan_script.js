@@ -154,7 +154,7 @@ gl_FragColor = vec4(vColor, 1.);\n\
     GL.vertexAttribPointer(_color, 3, GL.FLOAT, false,4*(3+3),3*4) ;
 
     GL.bindBuffer(GL.ELEMENT_ARRAY_BUFFER, CUBE_FACES);
-    GL.drawElements(GL.TRIANGLES,12*2*3, GL.UNSIGNED_SHORT, 0);
+    GL.drawElements(GL.TRIANGLES,36*19, GL.UNSIGNED_SHORT, 0);
 
     GL.flush();
 
