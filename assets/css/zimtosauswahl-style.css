@@ -5,9 +5,37 @@
 }
 /*Setzt die Breite der Buttons*/
 .btn {
+
  min-width:auto;
  width:100%;
 }
+
+.btn-sm { 
+  color: #000000; 
+  background-color: #EFF1F0; 
+  border-color: #DBDBDB;  
+} 
+ 
+/*Gibt den Buttons neue Farben*/ 
+.btn-sm:hover, .btn-sample:focus, .btn-sm:active, .btn-sm.active, .open .dropdown-toggle.btn-sm { 
+  color: #000000; 
+  background-color: #CCCCCC; 
+  border-color: #DBDBDB; 
+} 
+
+.btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.active:hover, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:active:hover, .open>.dropdown-toggle.btn-sm.focus, .open>.dropdown-toggle.btn-sm:focus, .open>.dropdown-toggle.btn-sm:hover
+{
+  color: #000000; 
+  background-color: #CCCCCC; 
+  border-color: #DBDBDB; 
+}
+
+.btn-success:active:focus {
+  color: #000000; 
+  background-color: #CCCCCC; 
+  border-color: #DBDBDB; 
+}
+
 /*Setzt die Breite der Eingabefelder*/
 .input-group {
  min-width:auto;
